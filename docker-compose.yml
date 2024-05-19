@@ -32,7 +32,7 @@ services:
     depends_on:
       hoppscotch-db:
         condition: service_healthy
-    command: ["sh", "-c", "pnpm exec prisma migrate deploy"]
+    command: ["sh", "-c", "pnpm exec prisma migrate deploy && touch /tmp/migrate_completed"]
     healthcheck:
       test: ["CMD-SHELL", "[ -f /tmp/migrate_completed ]"]
       interval: 5s
