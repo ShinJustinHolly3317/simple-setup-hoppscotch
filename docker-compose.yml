@@ -21,6 +21,24 @@ services:
       timeout: 5s
       retries: 10
 
+  hoppscotch-migrate:
+    container_name: hoppscotch-migrate
+    image: hoppscotch/hoppscotch
+    environment:
+      - DATABASE_URL=postgresql://postgres:testpass@hoppscotch-db:5432/hoppscotch
+      - ENABLE_SUBPATH_BASED_ACCESS=true
+    env_file:
+      - ./.env
+    depends_on:
+      hoppscotch-db:
+        condition: service_healthy
+    command: ["sh", "-c", "pnpm exec prisma migrate deploy"]
+    healthcheck:
+      test: ["CMD-SHELL", "[ -f /tmp/migrate_completed ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   hoppscotch-aio:
     container_name: hoppscotch-aio
     image: hoppscotch/hoppscotch
@@ -32,7 +50,8 @@ services:
     depends_on:
       hoppscotch-db:
         condition: service_healthy
-    # command: ["sh", "-c", "pnpm exec prisma migrate deploy && node /usr/src/app/aio_run.mjs"]
+      hoppscotch-migrate:
+        condition: service_healthy
     ports:
       - "3000:3000"
       - "3100:3100"
