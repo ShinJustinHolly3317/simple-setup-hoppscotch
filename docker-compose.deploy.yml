@@ -45,4 +45,5 @@ services:
       interval: 2s
       timeout: 10s
       retries: 30
+    mem_limit: 6g
 
