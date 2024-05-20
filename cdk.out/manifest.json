@@ -1,0 +1,377 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "HoppScotchCicdInfraStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "HoppScotchCicdInfraStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "HoppScotchCicdInfraStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://258248337883/us-east-1",
+      "properties": {
+        "templateFile": "HoppScotchCicdInfraStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::258248337883:role/cdk-hnb659fds-deploy-role-258248337883-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::258248337883:role/cdk-hnb659fds-cfn-exec-role-258248337883-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-258248337883-us-east-1/11c1ae7419f450ebfd5c30d6744c7f6bb4ebe9129974ccfe50249c249b601b9c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "HoppScotchCicdInfraStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::258248337883:role/cdk-hnb659fds-lookup-role-258248337883-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "HoppScotchCicdInfraStack.assets"
+      ],
+      "metadata": {
+        "/HoppScotchCicdInfraStack/ArtifactBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucket7410C9EF"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/ArtifactBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucketPolicy4B4B7752"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/ArtifactBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucketAutoDeleteObjectsCustomResource0BB47FD6"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc8378EB38"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1Subnet5C2D37C4"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTable6C95E38E"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTableAssociation97140677"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1DefaultRoute3DA9E72A"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1EIPD7E02669"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1NATGateway4D7517AA"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2Subnet691E08A3"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTable94F7E489"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTableAssociationDD5762D8"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2DefaultRoute97F91067"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2EIP3C605A87"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2NATGateway9182C01D"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1Subnet536B997A"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableB2C5B500"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableAssociation70C59FA6"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1DefaultRouteBE02A9ED"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2Subnet3788AAA1"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableA678073B"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableAssociationA89CAD56"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2DefaultRoute060D2087"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcIGWD7BA715C"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcVPCGWBF912B6E"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Instance/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceInstanceSecurityGroupF0E2D5BE"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Instance/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceInstanceRoleE9785DE5"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Instance/InstanceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceInstanceRoleDefaultPolicy4ACE9290"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Instance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceInstanceProfileAB5AEF02"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Instance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceC1063A87"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/CodeDeployApplication/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeDeployApplicationE587C27C"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/DeploymentGroup/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentGroupRoleC40B98DA"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/DeploymentGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentGroup6D277AF0"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/hoppscotchRepo/HoppScotchCicdInfraStackPipelineBDB83348EventRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "hoppscotchRepoHoppScotchCicdInfraStackPipelineBDB83348EventRule3B457DB1"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "V1 pipeline type is implicitly selected when `pipelineType` is not set. If you want to use V2 type, set `PipelineType.V2`. [ack: @aws-cdk/aws-codepipeline:unspecifiedPipelineType]",
+            "trace": [
+              "Annotations.addMessage (/Users/justinkao/projects/hoppscotch/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/Users/justinkao/projects/hoppscotch/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new Pipeline (/Users/justinkao/projects/hoppscotch/node_modules/aws-cdk-lib/aws-codepipeline/lib/pipeline.js:1:6677)",
+              "new HoppScotchCicdInfraStack (/Users/justinkao/projects/hoppscotch/lib/index.ts:81:5)",
+              "Object.<anonymous> (/Users/justinkao/projects/hoppscotch/bin/index.ts:5:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1233:14)",
+              "Module.m._compile (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1287:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "phase4 (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/justinkao/projects/hoppscotch/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1233:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1287:10)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleD68726F7"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleDefaultPolicyC7A05455"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineC660917D"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Source/hoppscotchCodecommitSource/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcehoppscotchCodecommitSourceCodePipelineActionRole64A8DF03"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Source/hoppscotchCodecommitSource/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcehoppscotchCodecommitSourceCodePipelineActionRoleDefaultPolicy9ADA4E2B"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/EventsRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineEventsRole46BEEA7C"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/EventsRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineEventsRoleDefaultPolicyFF4FCCE0"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Deploy/CodeDeploy/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineDeployCodeDeployCodePipelineActionRoleFA7F8EEF"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/Pipeline/Deploy/CodeDeploy/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineDeployCodeDeployCodePipelineActionRoleDefaultPolicy7B34E673"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/HoppScotchCicdInfraStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "HoppScotchCicdInfraStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
