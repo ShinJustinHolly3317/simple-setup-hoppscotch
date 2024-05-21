@@ -2,6 +2,9 @@
 
 cd /home/ubuntu/app
 
+# this is for sample test
+mv .env.example .env
+
 # Check if the postgres container is running
 if docker ps | grep -q postgres; then
   echo "Postgres container is already running."
